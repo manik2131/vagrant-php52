@@ -1,0 +1,15 @@
+<VirtualHost *:80>
+  ServerName fmc.dev
+  DocumentRoot "/var/www/fmc/web"
+  DirectoryIndex index.php
+  <Directory "/var/www/fmc/web">
+    AllowOverride All
+    Allow from All
+  </Directory>
+
+  Alias /sf /var/www/fmc/lib/vendor/symfony/data/web/sf
+  <Directory "/var/www/fmc/lib/vendor/symfony/data/web/sf">
+    AllowOverride All
+    Allow from All
+  </Directory>
+</VirtualHost>
