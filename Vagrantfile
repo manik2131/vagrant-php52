@@ -40,13 +40,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # install apache
   config.vm.provision "shell", inline: "sudo apt-get install -y apache2"
 
-  config.vm.provision "shell", inline: "sudo aptitude -y install php5-common=5.2.17.dfsg.1-0ubuntu0ppa3~lucid libapache2-mod-php5=5.2.17.dfsg.1-0ubuntu0ppa3~lucid php5=5.2.17.dfsg.1-0ubuntu0ppa3~lucid php5-cli=5.2.17.dfsg.1-0ubuntu0ppa3~lucid php5-curl=5.2.17.dfsg.1-0ubuntu0ppa3~lucid php5-mcrypt=5.2.17.dfsg.1-0ubuntu0ppa3~lucid php5-gd=5.2.17.dfsg.1-0ubuntu0ppa3~lucid php5-dev=5.2.17.dfsg.1-0ubuntu0ppa3~lucid php-pear=5.2.17.dfsg.1-0ubuntu0ppa3~lucid"
+  config.vm.provision "shell", inline: "sudo aptitude -y install php5-common=5.2.17.dfsg.1-0ubuntu0ppa3~lucid libapache2-mod-php5=5.2.17.dfsg.1-0ubuntu0ppa3~lucid php5=5.2.17.dfsg.1-0ubuntu0ppa3~lucid php5-cli=5.2.17.dfsg.1-0ubuntu0ppa3~lucid php5-curl=5.2.17.dfsg.1-0ubuntu0ppa3~lucid php5-mcrypt=5.2.17.dfsg.1-0ubuntu0ppa3~lucid php5-gd=5.2.17.dfsg.1-0ubuntu0ppa3~lucid php5-dev=5.2.17.dfsg.1-0ubuntu0ppa3~lucid php-pear=5.2.17.dfsg.1-0ubuntu0ppa3~lucid php5-mysql=5.2.17.dfsg.1-0ubuntu0ppa3~lucid"
 
   # install mysql
   config.vm.provision "shell", path: "mysql.sh"
-
-  # install apc
-  config.vm.provision "shell", inline: "sudo apt-get install -y php-apc"
 
   # set locales
   config.vm.provision "shell", inline: "sudo locale-gen fr_FR.UTF-8"
